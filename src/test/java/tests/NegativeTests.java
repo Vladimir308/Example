@@ -12,7 +12,6 @@ public class NegativeTests extends TestBase {
     @Test
     @Tag("Negative")
     public void negativeNavigationTests() {
-        System.setProperty("remoteUrl", "remote");
         mainPage.openMainPage();
         $(byText("Партнёрам")).click();
         $("[aria-label='breadcrumbs']").shouldHave(text("Партнерам"));
@@ -21,7 +20,6 @@ public class NegativeTests extends TestBase {
     @Test
     @Tag("Negative")
     public void negativeNavigationTests1() {
-        System.setProperty("remoteUrl", "remote");
         mainPage.openMainPage();
         $(byText("Акционерам и инвесторам")).click();
         $("[aria-label='breadcrumbs']").shouldHave(text("Инвесторам"));
