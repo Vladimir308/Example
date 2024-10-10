@@ -1,8 +1,6 @@
 package tests;
 
 import com.codeborne.selenide.Condition;
-import pages.MainPage;
-import testdata.TestData;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
@@ -19,8 +17,6 @@ import static io.qameta.allure.Allure.step;
 @Feature("X5 web site tests")
 @Story("UI tests")
 public class LaunchTests extends TestBase {
-    MainPage mainPage = new MainPage();
-    TestData testData = new TestData();
 
     @Test
     @DisplayName("Open and verify main page")
