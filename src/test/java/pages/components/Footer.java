@@ -2,8 +2,8 @@ package pages.components;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.api.Assertions;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -18,8 +18,7 @@ public class Footer {
     public Footer checkVK() {
         $(byText("VK")).click();
         switchTo().window("X5 Group | ВКонтакте");
-
-        Assertions.assertEquals(title(), "X5 Group | ВКонтакте");
+        assertThat("X5 Group | ВКонтакте");
 
         $(".page_name").shouldHave(Condition.text("X5 Group"));
         return this;
@@ -29,8 +28,7 @@ public class Footer {
         $("#menu-item-75").click();
         switchTo().window("X5 Group | Дзен");
 
-        Assertions.assertEquals(title(), "X5 Group | Дзен");
-
+        assertThat("X5 Group | Дзен");
         $("[itemprop='name']").shouldHave(Condition.text("X5 Group"));
         return this;
     }

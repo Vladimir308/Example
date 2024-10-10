@@ -31,9 +31,6 @@ public class WebDriverProvider {
         if (remoteUrl != null) {
             remote = remoteUrl;
             Configuration.browserSize = "1920x1080";
-            Configuration.pageLoadStrategy = "eager";
-            Configuration.pageLoadTimeout = 100000;
-            Configuration.timeout = 15000;
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
