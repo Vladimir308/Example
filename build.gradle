@@ -52,7 +52,7 @@ test {
             exceptionFormat "short"
         }
     }
-    task tests_for_x5(type: Test) {
+    task for_x5_test(type: Test) {
         useJUnitPlatform {
             includeTags("x5test");
         }
