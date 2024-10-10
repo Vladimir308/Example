@@ -31,7 +31,7 @@ public class Footer {
 
         Assertions.assertEquals(title(), "X5 Group | Дзен");
 
-        SelenideElement x5Group = $("data-testid=floor-card-brief").click().shouldBe(Condition.text("X5 Group"));
+        $("[itemprop='name']").shouldHave(Condition.text("X5 Group"));
         return this;
     }
 }

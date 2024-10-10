@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Configuration.remote;
 public class WebDriverProvider {
 
     private final WebConfig config;
+
     public WebDriverProvider() {
         this.config = ConfigFactory.create(WebConfig.class, System.getProperties());
         createDriver();
@@ -27,16 +28,16 @@ public class WebDriverProvider {
 
         Configuration.baseUrl = config.getBaseUrl();
         remote = config.getRemoteUrl();
-            Configuration.browserSize = "1920x1080";
-            Configuration.pageLoadStrategy = "eager";
-            Configuration.pageLoadTimeout = 100000;
-            Configuration.timeout = 15000;
+        Configuration.browserSize = "1920x1080";
+        Configuration.pageLoadStrategy = "eager";
+        Configuration.pageLoadTimeout = 100000;
+        Configuration.timeout = 15000;
 
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                    "enableVNC", true,
-                    "enableVideo", true));
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true));
 
-            Configuration.browserCapabilities = capabilities;
-        }
+        Configuration.browserCapabilities = capabilities;
     }
+}

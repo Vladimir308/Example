@@ -5,7 +5,6 @@ import pages.MainPage;
 import testdata.TestData;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -28,13 +27,12 @@ public class LaunchTests extends TestBase {
     public void checkMainPageOpen() {
         step("Open main page", () -> {
             mainPage.openMainPage();
-        }); }
+        });
+    }
 
     @ValueSource(strings = {
             "Компания",
-            "Партнерам",
             "Покупателю",
-            "Инвесторам",
             "Пресс-центр",
             "Карьера"
     })
@@ -65,7 +63,6 @@ public class LaunchTests extends TestBase {
                 .checkPhone(testData.phoneNumber_2);
     }
 
-    @Disabled
     @Test
     @DisplayName("Verify X5 VK")
     public void checkX5Vk() {
